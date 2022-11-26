@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private Integer first, second, result;
     private Boolean isOperationClick;
-    Operation operation;
+    Process process;
 
 
     @Override
@@ -129,41 +129,42 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.btn_plus:
                 first = Integer.valueOf(textView.getText().toString());
-                operation = Operation.PLUS;
+                process = Process.PLUS;
                 break;
             case R.id.btn_minus:
                 first = Integer.valueOf(textView.getText().toString());
-                operation = Operation.MINUS;
+                process = Process.MINUS;
 
                 break;
             case R.id.btn_division:
-                operation = Operation.DIVISION;
+                process = Process.DIVISION;
 
                 first = Integer.valueOf(textView.getText().toString());
                 break;
             case R.id.btn_multiplication:
-                operation = Operation.MULTIPLICATION;
+                process = Process.MULTIPLICATION;
                 first = Integer.valueOf(textView.getText().toString());
                 break;
 
             case R.id.btn_equal:
-                if (operation == Operation.PLUS) {
+                if (process == Process.PLUS) {
                     second = Integer.valueOf(textView.getText().toString());
                     result = first + second;
                     textView.setText(result.toString());
-                } else if (operation == Operation.MINUS) {
+                } else if (process == Process.MINUS) {
                     second = Integer.valueOf(textView.getText().toString());
                     result = first - second;
                     textView.setText(result.toString());
-                } else if (operation == Operation.DIVISION) {
+                } else if (process == Process.DIVISION) {
                     second = Integer.valueOf(textView.getText().toString());
                     result = first / second;
                     textView.setText(result.toString());
-                } else if (operation == Operation.MULTIPLICATION) {
+                } else if (process == Process.MULTIPLICATION) {
                     second = Integer.valueOf(textView.getText().toString());
                     result = first * second;
                     textView.setText(result.toString());
                 }
+
                 break;
         }
         isOperationClick = true;

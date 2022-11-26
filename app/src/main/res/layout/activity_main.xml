@@ -57,7 +57,8 @@
             <com.google.android.material.button.MaterialButton
                 style="@style/Gray.Button"
                 android:layout_marginEnd="18dp"
-                android:text="@string/prozent"></com.google.android.material.button.MaterialButton>
+                android:text="@string/prozent"
+                tools:ignore="InvalidId"></com.google.android.material.button.MaterialButton>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_division"
