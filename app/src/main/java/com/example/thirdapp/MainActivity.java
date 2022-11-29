@@ -2,8 +2,10 @@ package com.example.thirdapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,11 +16,23 @@ public class MainActivity extends AppCompatActivity {
     Process process;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.text_view);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        Button button = findViewById(R.id.bottom);
+        button.setOnClickListener(view -> {
+            intent.putExtra("key", result.toString());
+            startActivity(intent);
+        });
     }
 
     public void onNumberClick(View view) {
@@ -123,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         isOperationClick = false;
+        ((Button) findViewById(R.id.bottom)).setVisibility(View.GONE);
     }
 
     public void onOperationClick(View view) {
@@ -164,9 +179,12 @@ public class MainActivity extends AppCompatActivity {
                     result = first * second;
                     textView.setText(result.toString());
                 }
-
+                ((Button) findViewById(R.id.bottom)).setVisibility(View.VISIBLE);
                 break;
         }
         isOperationClick = true;
+
     }
+
+
 }

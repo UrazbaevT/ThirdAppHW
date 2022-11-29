@@ -218,5 +218,21 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/bottom"
+        android:visibility="gone"
+        android:layout_width="177dp"
+        android:layout_height="59dp"
+        android:layout_margin="18dp"
+        android:text="@string/new_aktivity"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/purple_200"
+        tools:ignore="InvalidId" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
